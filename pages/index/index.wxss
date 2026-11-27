@@ -1,0 +1,336 @@
+/* ========== 页面容器 ========== */
+.app-container {
+  max-width: 750rpx;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 48rpx;
+  padding: 40rpx 36rpx 56rpx;
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.05);
+}
+
+/* ========== 头部 ========== */
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+  padding-bottom: 12rpx;
+  border-bottom: 1rpx solid #e9e9ef;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #1a1a1e;
+}
+
+.badge {
+  background-color: #e9f0ff;
+  color: #0066cc;
+  font-size: 26rpx;
+  font-weight: 500;
+  padding: 8rpx 20rpx;
+  border-radius: 60rpx;
+}
+
+/* ========== 统计卡片 ========== */
+.stats-card {
+  background: linear-gradient(135deg, #0a6cff 0%, #2b8aff 100%);
+  border-radius: 36rpx;
+  padding: 36rpx 40rpx;
+  margin-bottom: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.stats-label {
+  font-size: 32rpx;
+}
+
+.stats-right {
+  display: flex;
+  align-items: baseline;
+}
+
+.stats-number {
+  font-size: 88rpx;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stats-unit {
+  font-size: 32rpx;
+  margin-left: 8rpx;
+}
+
+/* ========== 表单 ========== */
+.form-title {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #2c2c32;
+  margin-bottom: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.form-tag {
+  background: #eef2ff;
+  color: #0066cc;
+  font-size: 26rpx;
+  border-radius: 24rpx;
+  padding: 4rpx 20rpx;
+}
+
+.input-group {
+  margin-bottom: 32rpx;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #4b4b55;
+  margin-bottom: 12rpx;
+}
+
+/* ========== 日期范围 ========== */
+.date-range-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date-box {
+  flex: 1;
+  background-color: #f7f7fa;
+  border: 1rpx solid #e4e4ea;
+  border-radius: 20rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.date-box picker {
+  width: 100%;
+  height: 100%;
+}
+
+.picker-content {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #1a1a1e;
+}
+
+.date-sep {
+  font-size: 28rpx;
+  color: #8e8e98;
+  padding: 0 16rpx;
+  flex-shrink: 0;
+}
+
+/* ========== 双列输入框 ========== */
+.row-2col {
+  display: flex;
+  justify-content: space-between;
+}
+
+.half {
+  width: 48%;
+}
+
+.input-box {
+  background-color: #f7f7fa;
+  border: 1rpx solid #e4e4ea;
+  border-radius: 20rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  color: #1a1a1e;
+}
+
+/* ========== 错误提示 ========== */
+.error-hint {
+  color: #e54545;
+  font-size: 26rpx;
+  margin-top: -16rpx;
+  margin-bottom: 20rpx;
+}
+
+/* ========== 添加按钮 ========== */
+.btn-add {
+  background: #0a6cff;
+  color: white;
+  border-radius: 80rpx;
+  padding: 24rpx 0;
+  width: 100%;
+  font-size: 34rpx;
+  font-weight: 600;
+  margin: 16rpx 0 56rpx;
+  border: none;
+}
+
+.btn-add-hover {
+  background: #0055cc;
+}
+
+.btn-add::after {
+  border: none;
+}
+
+/* ========== 列表头部 ========== */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+
+.list-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #1a1a1e;
+}
+
+.count-badge {
+  background: #f0f0f5;
+  color: #5b5b66;
+  font-size: 26rpx;
+  font-weight: 500;
+  padding: 8rpx 24rpx;
+  border-radius: 60rpx;
+}
+
+/* ========== 侧滑容器 ========== */
+.record-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 36rpx;
+  margin-bottom: 24rpx;
+  background-color: #e54545;
+}
+
+.swipe-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  background-color: #e54545;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.swipe-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* 记录条目内部样式 */
+.record-item {
+  background-color: #fafafd;
+  border-radius: 36rpx;
+  padding: 32rpx;
+  border: 1rpx solid #efeff4;
+}
+
+.record-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx dashed #e9e9ef;
+}
+
+.record-place {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #1a1a1e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.total-times {
+  font-size: 26rpx;
+  color: #0066cc;
+  background: #e8eeff;
+  padding: 6rpx 16rpx;
+  border-radius: 30rpx;
+  flex-shrink: 0;
+}
+
+.entry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 16rpx 24rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid #ebebf0;
+}
+
+.entry-date {
+  font-size: 28rpx;
+  color: #4b4b55;
+  font-weight: 500;
+}
+
+.entry-count {
+  font-size: 26rpx;
+  color: #0066cc;
+  font-weight: 600;
+}
+
+/* 空状态与底部 */
+.empty-state {
+  text-align: center;
+  padding: 80rpx 40rpx;
+  color: #b0b0b8;
+  font-size: 30rpx;
+  background: #fafafd;
+  border-radius: 40rpx;
+  border: 2rpx dashed #dbdbe3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  opacity: 0.5;
+}
+
+.footer-note {
+  text-align: center;
+  color: #b0b0b8;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  border-top: 1rpx solid #f0f0f5;
+  padding-top: 32rpx;
+}

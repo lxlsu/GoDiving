@@ -1,0 +1,78 @@
+// wxs 高性能侧滑逻辑
+var touchStartX = 0;
+var touchStartY = 0;
+var isSwiping = false;
+
+function touchstart(e, ownerInstance) {
+  // 获取当前触摸的 X 和 Y 坐标
+  touchStartX = e.touches[0].pageX;
+  touchStartY = e.touches[0].pageY;
+  isSwiping = false;
+}
+
+function touchmove(e, ownerInstance) {
+  var touchMoveX = e.touches[0].pageX;
+  var touchMoveY = e.touches[0].pageY;
+  
+  var diffX = touchMoveX - touchStartX;
+  var diffY = touchMoveY - touchStartY;
+  
+  // 如果水平滑动距离大于垂直滑动距离，且水平滑动大于 10px，判定为侧滑
+  if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
+    isSwiping = true;
+    var instance = ownerInstance.selectComponent('.swipe-content');
+    if (!instance) return;
+    
+    // 只允许向左滑动 (diffX < 0)
+    if (diffX < 0) {
+      // 最大滑动距离为 -120px (删除按钮的宽度)
+      var moveDistance = diffX < -120 ? -120 : diffX;
+      instance.setStyle({
+        "transform": "translateX(" + moveDistance + "px)",
+        "transition": "none"
+      });
+    } else {
+      // 如果已经划出，用户又向右滑，则跟随手指回弹
+      var currentTransform = instance.getState() ? instance.getState().transform : 0;
+      if (currentTransform < 0) {
+         var moveDistance = currentTransform + diffX;
+         moveDistance = moveDistance > 0 ? 0 : moveDistance;
+         instance.setStyle({
+            "transform": "translateX(" + moveDistance + "px)",
+            "transition": "none"
+         });
+      }
+    }
+  }
+}
+
+function touchend(e, ownerInstance) {
+  if (!isSwiping) return;
+  var touchEndX = e.changedTouches[0].pageX;
+  var diffX = touchEndX - touchStartX;
+  var instance = ownerInstance.selectComponent('.swipe-content');
+  
+  if (!instance) return;
+
+  if (diffX < -30) {
+    // 向左滑动超过 30px，完全展开删除按钮
+    instance.setStyle({
+      "transform": "translateX(-120px)",
+      "transition": "transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
+    });
+    instance.setState({ transform: -120 });
+  } else {
+    // 否则回弹归位
+    instance.setStyle({
+      "transform": "translateX(0px)",
+      "transition": "transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
+    });
+    instance.setState({ transform: 0 });
+  }
+}
+
+module.exports = {
+  touchstart: touchstart,
+  touchmove: touchmove,
+  touchend: touchend
+};
